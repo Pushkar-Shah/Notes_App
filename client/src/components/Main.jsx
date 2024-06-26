@@ -30,7 +30,7 @@ function Main() {
 
   async function deleteItem(id){
     try{
-      const response = await fetch(`http://localhost:8000/note/${id}`,{method: "Delete",
+      const response = await fetch(`${process.env.REACT_APP_PORT_URL}/note/${id}`,{method: "Delete",
     });
       // const jsonData = await response.json();
       console.log("...");
@@ -45,7 +45,7 @@ function Main() {
 
   const  getNotes = async () =>{
     try {
-      const response = await fetch(`http://localhost:8000/notes/${id}`);
+      const response = await fetch(`${process.env.REACT_APP_PORT_URL}/notes/${id}`);
       const jsonData = await response.json();
       console.log("...");
       setNotes(await jsonData);

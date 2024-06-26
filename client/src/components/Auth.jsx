@@ -27,7 +27,7 @@ const Auth = ()=> {
     }
     const json = {email: email ,password : password ,username : username};
     console.log(json);
-    const response = await fetch(`http://localhost:8000/${endpoint}`,{
+    const response = await fetch(`${process.env.REACT_APP_PORT_URL}/${endpoint}`,{
       method : 'POST',
       headers : {'Content-type' : 'application/json'},
       body : JSON.stringify(json)
